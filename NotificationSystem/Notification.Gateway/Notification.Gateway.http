@@ -1,0 +1,6 @@
+@Notification.Gateway_HostAddress = http://localhost:5010
+
+GET {{Notification.Gateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
