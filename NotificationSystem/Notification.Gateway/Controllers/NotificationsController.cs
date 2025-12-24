@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Notification.Contracts;
+using Notification.Gateway.Services;
 
 namespace Notification.Gateway.Controllers;
 
@@ -8,65 +9,54 @@ namespace Notification.Gateway.Controllers;
 public class NotificationsController : ControllerBase
 {
     private readonly ILogger<NotificationsController> _logger;
-
-    public NotificationsController(ILogger<NotificationsController> logger)
+    private readonly IRabbitMqService _mqService;
+    
+    public NotificationsController(
+        ILogger<NotificationsController> logger,
+        IRabbitMqService mqService)
     {
         _logger = logger;
+        _mqService = mqService;
     }
 
-    // GET: api/notifications - для проверки работы
     [HttpGet]
     public IActionResult Get()
     {
-        return Ok("Notification Gateway is running. Use POST to send notifications.");
+        return Ok("Notification Gateway is running");
     }
 
-    // GET: api/notifications/{id} - для получения статуса (позже реализуем)
-    [HttpGet("{id:guid}")]
-    public IActionResult GetById(Guid id)
-    {
-        return Ok($"Notification status for ID: {id} (not implemented yet)");
-    }
-
-    // POST: api/notifications - основной метод отправки
     [HttpPost]
     public IActionResult SendNotification([FromBody] NotificationRequest request)
     {
         try
         {
-            // Валидация
             if (string.IsNullOrEmpty(request.To))
-                return BadRequest("Recipient (To) is required");
+                return BadRequest("Получатель (To) обязателен");
 
             if (string.IsNullOrEmpty(request.Subject) && request.Type == "email")
-                return BadRequest("Subject is required for email");
+                return BadRequest("Тема обязательна для email");
 
-            if (string.IsNullOrEmpty(request.Body))
-                return BadRequest("Message body is required");
+            _mqService.SendNotification(request);
 
-            // Логируем
-            _logger.LogInformation("Received notification: Type={Type}, To={To}, Subject={Subject}",
-                request.Type, request.To, request.Subject);
+            _logger.LogInformation("Получено уведомление: {Type} для {To}",
+                request.Type, request.To);
 
-            // TODO: Здесь позже добавим отправку в RabbitMQ
-            // Пока просто возвращаем успех
-
-            var response = new
+            return Ok(new
             {
                 Success = true,
                 MessageId = request.Id,
-                Message = "Notification accepted for processing",
+                Message = "Уведомление принято в обработку",
                 Type = request.Type,
-                To = request.To,
+                Queue = request.Type.ToLower() == "email"
+                    ? "email_notifications"
+                    : "sms_notifications",
                 CreatedAt = request.CreatedAt
-            };
-
-            return Ok(response);
+            });
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error processing notification");
-            return StatusCode(500, new { Error = "Internal server error", Details = ex.Message });
+            _logger.LogError(ex, "Ошибка при обработке уведомления");
+            return StatusCode(500, "Внутренняя ошибка сервера");
         }
     }
 }
