@@ -603,6 +603,16 @@
             "rid": "win"
           }
         }
+      },
+      "Notification.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Notification.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Notification.Contracts.dll": {}
+        }
       }
     }
   },
@@ -1535,11 +1545,17 @@
         "system.diagnostics.eventlog.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Notification.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../Notification.Contracts/Notification.Contracts.csproj",
+      "msbuildProject": "../Notification.Contracts/Notification.Contracts.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Microsoft.Extensions.Hosting >= 8.0.1"
+      "Microsoft.Extensions.Hosting >= 8.0.1",
+      "Notification.Contracts >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1573,7 +1589,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Contracts\\Notification.Contracts.csproj": {
+              "projectPath": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Contracts\\Notification.Contracts.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

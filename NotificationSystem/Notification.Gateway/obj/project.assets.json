@@ -88,6 +88,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Notification.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Notification.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Notification.Contracts.dll": {}
+        }
       }
     }
   },
@@ -439,10 +449,16 @@
         "swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "Notification.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../Notification.Contracts/Notification.Contracts.csproj",
+      "msbuildProject": "../Notification.Contracts/Notification.Contracts.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Notification.Contracts >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
@@ -477,7 +493,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Contracts\\Notification.Contracts.csproj": {
+              "projectPath": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Contracts\\Notification.Contracts.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
