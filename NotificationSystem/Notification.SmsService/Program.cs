@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
-using Notification.EmailService;
 using Notification.EmailService.Data;
+using Notification.SmsService;
 
 var builder = Host.CreateApplicationBuilder(args);
 
@@ -28,17 +28,9 @@ builder.Services.AddHostedService<Worker>();
 
 var host = builder.Build();
 
-using (var scope = host.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<NotificationContext>();
-
-    await dbContext.Database.EnsureCreatedAsync();
-}
-
 var logger = host.Services.GetRequiredService<ILogger<Program>>();
-logger.LogInformation("=== Email Service запускается ===");
+logger.LogInformation("=== SMS Service запускается ===");
 logger.LogInformation("Окружение: {Environment}", builder.Environment.EnvironmentName);
-logger.LogInformation("Корневой каталог: {ContentRoot}", builder.Environment.ContentRootPath);
 
 using (var scope = host.Services.CreateScope())
 {
@@ -46,9 +38,8 @@ using (var scope = host.Services.CreateScope())
 
     try
     {
-        logger.LogInformation("Применяем миграции базы данных...");
-        dbContext.Database.Migrate();
-        logger.LogInformation("Миграции успешно применены");
+        logger.LogInformation("Проверка/применение миграций БД...");
+        await dbContext.Database.MigrateAsync();
 
         var canConnect = await dbContext.Database.CanConnectAsync();
         logger.LogInformation("Подключение к БД: {Status}",
@@ -56,7 +47,7 @@ using (var scope = host.Services.CreateScope())
     }
     catch (Exception ex)
     {
-        logger.LogError(ex, "Ошибка при применении миграций");
+        logger.LogError(ex, "Ошибка при работе с БД");
         throw;
     }
 }
