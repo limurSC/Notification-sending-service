@@ -3,52 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.emailservice\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|solutionrelative:notification.emailservice\\worker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.gateway\\notification.gateway.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|solutionrelative:notification.gateway\\notification.gateway.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.emailservice\\data\\notificationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|solutionrelative:notification.emailservice\\data\\notificationcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.emailservice\\notification.emailservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|solutionrelative:notification.emailservice\\notification.emailservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.emailservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|solutionrelative:notification.emailservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.emailservice\\data\\notificationlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|solutionrelative:notification.emailservice\\data\\notificationlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.emailservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|solutionrelative:notification.emailservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.gateway\\services\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|solutionrelative:notification.gateway\\services\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.gateway\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|solutionrelative:notification.gateway\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{02E22799-54E1-4202-B3A0-A7516204CE33}|Notification.SmsService\\Notification.SmsService.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.smsservice\\notification.smsservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{02E22799-54E1-4202-B3A0-A7516204CE33}|Notification.SmsService\\Notification.SmsService.csproj|solutionrelative:notification.smsservice\\notification.smsservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.gateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|solutionrelative:notification.gateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.gateway\\services\\irabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|solutionrelative:notification.gateway\\services\\irabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.emailservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|solutionrelative:notification.emailservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13E0D368-5972-48C2-B72B-44CDBE737731}|Notification.Contracts\\Notification.Contracts.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.contracts\\notificationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13E0D368-5972-48C2-B72B-44CDBE737731}|Notification.Contracts\\Notification.Contracts.csproj|solutionrelative:notification.contracts\\notificationstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.emailservice\\notification.emailservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|solutionrelative:notification.emailservice\\notification.emailservice.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{13E0D368-5972-48C2-B72B-44CDBE737731}|Notification.Contracts\\Notification.Contracts.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.contracts\\notificationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{13E0D368-5972-48C2-B72B-44CDBE737731}|Notification.Contracts\\Notification.Contracts.csproj|solutionrelative:notification.contracts\\notificationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.emailservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|solutionrelative:notification.emailservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.gateway\\controllers\\statuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|solutionrelative:notification.gateway\\controllers\\statuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,45 +38,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Notification.EmailService",
-              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Notification.EmailService.csproj",
-              "RelativeDocumentMoniker": "Notification.EmailService\\Notification.EmailService.csproj",
-              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Notification.EmailService.csproj",
-              "RelativeToolTip": "Notification.EmailService\\Notification.EmailService.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAOAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Program.cs",
+              "RelativeDocumentMoniker": "Notification.EmailService\\Program.cs",
+              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Program.cs",
+              "RelativeToolTip": "Notification.EmailService\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAArwCIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-25T09:53:30.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Notification.Gateway",
+              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Notification.Gateway.csproj",
+              "RelativeDocumentMoniker": "Notification.Gateway\\Notification.Gateway.csproj",
+              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Notification.Gateway.csproj",
+              "RelativeToolTip": "Notification.Gateway\\Notification.Gateway.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-25T07:22:05.851Z",
+              "WhenOpened": "2025-12-25T09:48:31.522Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "NotificationContext.cs",
-              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Data\\NotificationContext.cs",
-              "RelativeDocumentMoniker": "Notification.EmailService\\Data\\NotificationContext.cs",
-              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Data\\NotificationContext.cs",
-              "RelativeToolTip": "Notification.EmailService\\Data\\NotificationContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T07:14:45.685Z",
+              "Title": "Notification.SmsService",
+              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.SmsService\\Notification.SmsService.csproj",
+              "RelativeDocumentMoniker": "Notification.SmsService\\Notification.SmsService.csproj",
+              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.SmsService\\Notification.SmsService.csproj",
+              "RelativeToolTip": "Notification.SmsService\\Notification.SmsService.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-25T09:48:20.179Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "NotificationLog.cs",
-              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Data\\NotificationLog.cs",
-              "RelativeDocumentMoniker": "Notification.EmailService\\Data\\NotificationLog.cs",
-              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Data\\NotificationLog.cs",
-              "RelativeToolTip": "Notification.EmailService\\Data\\NotificationLog.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAcwCkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T07:14:15.29Z",
+              "Title": "Notification.EmailService",
+              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Notification.EmailService.csproj",
+              "RelativeDocumentMoniker": "Notification.EmailService\\Notification.EmailService.csproj",
+              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Notification.EmailService.csproj",
+              "RelativeToolTip": "Notification.EmailService\\Notification.EmailService.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-25T09:48:11.362Z",
               "EditorCaption": ""
             },
             {
@@ -109,111 +102,33 @@
               "RelativeToolTip": "Notification.EmailService\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-24T14:50:27.249Z",
+              "WhenOpened": "2025-12-25T09:00:38.139Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Program.cs",
-              "RelativeDocumentMoniker": "Notification.EmailService\\Program.cs",
-              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Program.cs",
-              "RelativeToolTip": "Notification.EmailService\\Program.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T14:50:02.247Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Worker.cs",
-              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Worker.cs",
-              "RelativeDocumentMoniker": "Notification.EmailService\\Worker.cs",
-              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Worker.cs",
-              "RelativeToolTip": "Notification.EmailService\\Worker.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAUwEMAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T14:48:09.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RabbitMqService.cs",
-              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Services\\RabbitMqService.cs",
-              "RelativeDocumentMoniker": "Notification.Gateway\\Services\\RabbitMqService.cs",
-              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Services\\RabbitMqService.cs",
-              "RelativeToolTip": "Notification.Gateway\\Services\\RabbitMqService.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAswFQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T14:37:14.696Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IRabbitMqService.cs",
-              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Services\\IRabbitMqService.cs",
-              "RelativeDocumentMoniker": "Notification.Gateway\\Services\\IRabbitMqService.cs",
-              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Services\\IRabbitMqService.cs",
-              "RelativeToolTip": "Notification.Gateway\\Services\\IRabbitMqService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T14:36:45.897Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "NotificationsController.cs",
-              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Controllers\\NotificationsController.cs",
-              "RelativeDocumentMoniker": "Notification.Gateway\\Controllers\\NotificationsController.cs",
-              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Controllers\\NotificationsController.cs",
-              "RelativeToolTip": "Notification.Gateway\\Controllers\\NotificationsController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAwwAwAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T13:48:11.818Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Program.cs",
               "RelativeDocumentMoniker": "Notification.Gateway\\Program.cs",
               "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Program.cs",
               "RelativeToolTip": "Notification.Gateway\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAArwCMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T13:37:47.51Z",
+              "WhenOpened": "2025-12-25T09:00:03.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "NotificationStatus.cs",
-              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Contracts\\NotificationStatus.cs",
-              "RelativeDocumentMoniker": "Notification.Contracts\\NotificationStatus.cs",
-              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Contracts\\NotificationStatus.cs",
-              "RelativeToolTip": "Notification.Contracts\\NotificationStatus.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAyAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "StatusController.cs",
+              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Controllers\\StatusController.cs",
+              "RelativeDocumentMoniker": "Notification.Gateway\\Controllers\\StatusController.cs",
+              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Controllers\\StatusController.cs",
+              "RelativeToolTip": "Notification.Gateway\\Controllers\\StatusController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T13:36:21.33Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "NotificationRequest.cs",
-              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Contracts\\NotificationRequest.cs",
-              "RelativeDocumentMoniker": "Notification.Contracts\\NotificationRequest.cs",
-              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Contracts\\NotificationRequest.cs",
-              "RelativeToolTip": "Notification.Contracts\\NotificationRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-24T11:23:12.744Z",
+              "WhenOpened": "2025-12-25T08:58:18.23Z",
               "EditorCaption": ""
             }
           ]
