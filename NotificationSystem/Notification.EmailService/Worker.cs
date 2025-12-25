@@ -1,6 +1,8 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Notification.Contracts;
+using Notification.EmailService.Data;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
@@ -11,91 +13,38 @@ namespace Notification.EmailService;
 public class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
-    private readonly IConnection _connection;
-    private readonly IModel _channel;
+    private readonly IServiceProvider _serviceProvider;
+    private IConnection? _connection;
+    private IModel? _channel;
 
-    public Worker(ILogger<Worker> logger)
+    public Worker(ILogger<Worker> logger, IServiceProvider serviceProvider)
     {
         _logger = logger;
-
-        var factory = new ConnectionFactory
-        {
-            HostName = "localhost",
-            Port = 5672,
-            UserName = "guest",
-            Password = "guest",
-        };
-
-        _connection = factory.CreateConnection();
-        _channel = _connection.CreateModel();
-
-        _channel.QueueDeclare(
-            queue: "email_notifications",
-            durable: true,
-            exclusive: false,
-            autoDelete: false,
-            arguments: null);
-
-        _logger.LogInformation("Email Service подключен к RabbitMQ");
+        _serviceProvider = serviceProvider;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        await InitializeRabbitMQAsync();
+
         _logger.LogInformation("Email Service запущен. Ожидание сообщений...");
 
-        var consumer = new EventingBasicConsumer(_channel);
+        var consumer = new AsyncEventingBasicConsumer(_channel);
 
         consumer.Received += async (model, ea) =>
         {
-            var retryCount = 0;
-            const int maxRetries = 3;
-            bool processed = false;
-
-            while (!processed && retryCount < maxRetries)
+            try
             {
-                try
-                {
-                    var body = ea.Body.ToArray();
-                    var message = Encoding.UTF8.GetString(body);
-                    var notification = JsonSerializer.Deserialize<NotificationRequest>(message);
-
-                    if (notification != null)
-                    {
-                        _logger.LogInformation("Попытка {Attempt} обработки уведомления {Id}",
-                            retryCount + 1, notification.Id);
-
-                        await ProcessEmailNotificationAsync(notification);
-
-                        _channel.BasicAck(ea.DeliveryTag, false);
-                        processed = true;
-
-                        _logger.LogInformation("Уведомление {Id} обработано успешно", notification.Id);
-                    }
-                    else
-                    {
-                        _logger.LogWarning("Не удалось десериализовать сообщение");
-                        _channel.BasicNack(ea.DeliveryTag, false, false);
-                        processed = true;
-                    }
-                }
-                catch (Exception ex) when (retryCount < maxRetries - 1)
-                {
-                    retryCount++;
-                    _logger.LogWarning(ex, "Ошибка при обработке (попытка {Attempt}). Повтор через 2 секунды",
-                        retryCount);
-                    await Task.Delay(2000);
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex, "Все {MaxRetries} попытки обработки уведомления провалились",
-                        maxRetries);
-                    _channel.BasicNack(ea.DeliveryTag, false, false);
-                    processed = true;
-                }
+                await ProcessMessageAsync(ea, stoppingToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Необработанная ошибка в обработчике сообщения");
+                _channel?.BasicNack(ea.DeliveryTag, false, true);
             }
         };
 
-        _channel.BasicConsume(
+        _channel!.BasicConsume(
             queue: "email_notifications",
             autoAck: false,
             consumer: consumer);
@@ -106,32 +55,121 @@ public class Worker : BackgroundService
         }
     }
 
-    private async Task ProcessEmailNotificationAsync(NotificationRequest notification)
-    {
-        await Task.Delay(100);
-
-        _logger.LogInformation("Обработка email для {To}: {Subject}",
-            notification.To, notification.Subject);
-    }
-
-    private void ProcessEmailNotification(NotificationRequest notification)
+    private async Task InitializeRabbitMQAsync()
     {
         try
         {
-            _logger.LogInformation("=== ОБРАБОТКА EMAIL ===");
-            _logger.LogInformation("ID: {Id}", notification.Id);
-            _logger.LogInformation("Кому: {To}", notification.To);
-            _logger.LogInformation("Тема: {Subject}", notification.Subject);
-            _logger.LogInformation("Текст: {Body}", notification.Body);
-            _logger.LogInformation("Тип: {Type}", notification.Type);
-            _logger.LogInformation("Создано: {CreatedAt}", notification.CreatedAt);
-            _logger.LogInformation("=== КОНЕЦ ОБРАБОТКИ ===");
+            var factory = new ConnectionFactory
+            {
+                HostName = "localhost",
+                Port = 5672,
+                UserName = "guest",
+                Password = "guest",
+                DispatchConsumersAsync = true
+            };
+
+            _connection = factory.CreateConnection();
+            _channel = _connection.CreateModel();
+
+            _channel.QueueDeclare(
+                queue: "email_notifications",
+                durable: true,
+                exclusive: false,
+                autoDelete: false,
+                arguments: null);
+
+            _channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
+
+            _logger.LogInformation("Подключение к RabbitMQ установлено");
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Ошибка в ProcessEmailNotification для уведомления {Id}", notification.Id);
+            _logger.LogError(ex, "Ошибка при подключении к RabbitMQ");
             throw;
         }
+    }
+
+    private async Task ProcessMessageAsync(BasicDeliverEventArgs ea, CancellationToken cancellationToken)
+    {
+        using var scope = _serviceProvider.CreateScope();
+        var dbContext = scope.ServiceProvider.GetRequiredService<NotificationContext>();
+
+        NotificationLog? notificationLog = null;
+
+        try
+        {
+            var body = ea.Body.ToArray();
+            var message = Encoding.UTF8.GetString(body);
+            var notification = JsonSerializer.Deserialize<NotificationRequest>(message);
+
+            if (notification == null)
+            {
+                _logger.LogWarning("Не удалось десериализовать сообщение. Сообщение: {Message}", message);
+                _channel!.BasicNack(ea.DeliveryTag, false, false);
+                return;
+            }
+
+            _logger.LogInformation("Начало обработки уведомления {Id}", notification.Id);
+
+            notificationLog = await dbContext.Notifications
+                .FirstOrDefaultAsync(n => n.Id == notification.Id, cancellationToken);
+
+            if (notificationLog == null)
+            {
+                notificationLog = NotificationLog.FromRequest(notification);
+                dbContext.Notifications.Add(notificationLog);
+                _logger.LogInformation("Создана новая запись для уведомления {Id}", notification.Id);
+            }
+            else
+            {
+                notificationLog.MarkAsRetrying();
+                _logger.LogInformation("Повторная обработка уведомления {Id}, попытка {RetryCount}",
+                    notification.Id, notificationLog.RetryCount);
+            }
+
+            await dbContext.SaveChangesAsync(cancellationToken);
+
+            await ProcessEmailNotificationAsync(notificationLog, cancellationToken);
+
+            notificationLog.MarkAsSent();
+            await dbContext.SaveChangesAsync(cancellationToken);
+
+            _channel!.BasicAck(ea.DeliveryTag, false);
+
+            _logger.LogInformation("Уведомление {Id} успешно обработано и сохранено", notification.Id);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Ошибка при обработке уведомления");
+
+            if (notificationLog != null)
+            {
+                notificationLog.MarkAsFailed(ex.Message);
+                try
+                {
+                    await dbContext.SaveChangesAsync(cancellationToken);
+                }
+                catch (Exception saveEx)
+                {
+                    _logger.LogError(saveEx, "Не удалось сохранить ошибку в БД");
+                }
+            }
+
+            _channel!.BasicNack(ea.DeliveryTag, false, true);
+
+            _logger.LogInformation("Уведомление возвращено в очередь для повторной обработки");
+        }
+    }
+
+    private async Task ProcessEmailNotificationAsync(NotificationLog notification, CancellationToken cancellationToken)
+    {
+        _logger.LogInformation(">>> Отправка email для {To}", notification.To);
+        _logger.LogInformation(">>> Тема: {Subject}", notification.Subject);
+        _logger.LogInformation(">>> Текст: {Body}", notification.Body?.Substring(0, Math.Min(50, notification.Body?.Length ?? 0)) + "...");
+
+        await Task.Delay(500, cancellationToken);
+
+        _logger.LogInformation(">>> Email успешно отправлен");
     }
 
     public override void Dispose()
@@ -144,11 +182,11 @@ public class Worker : BackgroundService
             _connection?.Close();
             _connection?.Dispose();
 
-            _logger.LogInformation("Email Service отключен от RabbitMQ");
+            _logger.LogInformation("Ресурсы RabbitMQ освобождены");
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Ошибка при отключении от RabbitMQ");
+            _logger.LogError(ex, "Ошибка при освобождении ресурсов");
         }
 
         base.Dispose();
