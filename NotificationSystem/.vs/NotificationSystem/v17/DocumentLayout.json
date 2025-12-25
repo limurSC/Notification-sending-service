@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.gateway\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|solutionrelative:notification.gateway\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.gateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D84A997-1567-4DD7-923D-19AF1F44690D}|Notification.Gateway\\Notification.Gateway.csproj|solutionrelative:notification.gateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{754FC069-D67B-A9D7-50A1-8D1CA196D8F1}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{754FC069-D67B-A9D7-50A1-8D1CA196D8F1}|C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{754FC069-D67B-A9D7-50A1-8D1CA196D8F1}|\u042D\u043B\u0435\u043C\u0435\u043D\u0442\u044B \u0440\u0435\u0448\u0435\u043D\u0438\u044F{754FC069-D67B-A9D7-50A1-8D1CA196D8F1}|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|c:\\users\\ilnur\\desktop\\github\\notification-sending-service\\notificationsystem\\notification.emailservice\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{251092CC-480F-4450-B7CC-8D968FA0E3F0}|Notification.EmailService\\Notification.EmailService.csproj|solutionrelative:notification.emailservice\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\appsettings.json",
-              "RelativeDocumentMoniker": "Notification.Gateway\\appsettings.json",
-              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\appsettings.json",
-              "RelativeToolTip": "Notification.Gateway\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-25T10:06:22.872Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Program.cs",
               "RelativeDocumentMoniker": "Notification.Gateway\\Program.cs",
               "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.Gateway\\Program.cs",
               "RelativeToolTip": "Notification.Gateway\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-25T09:00:03.58Z",
+              "WhenOpened": "2025-12-25T11:40:57.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Dockerfile",
+              "RelativeDocumentMoniker": "Notification.EmailService\\Dockerfile",
+              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\Notification.EmailService\\Dockerfile",
+              "RelativeToolTip": "Notification.EmailService\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-12-25T11:33:59.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Users\\Ilnur\\Desktop\\Github\\Notification-sending-service\\NotificationSystem\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-12-25T11:30:06.286Z",
               "EditorCaption": ""
             }
           ]

@@ -33,4 +33,22 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
+app.MapGet("/", () =>
+{
+    return Results.Ok(new
+    {
+        Service = "Notification Gateway",
+        Status = "Running",
+        Version = "1.0",
+        Endpoints = new[]
+        {
+            "/swagger - API Documentation",
+            "/api/notifications - Send notifications",
+            "/api/status/{id} - Check notification status",
+            "/api/status/recent - Recent notifications",
+            "/api/status/stats - Statistics"
+        }
+    });
+});
+
 app.Run();

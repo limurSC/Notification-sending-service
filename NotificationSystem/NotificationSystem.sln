@@ -12,6 +12,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{754FC069-D67B-A9D7-50A1-8D1CA196D8F1}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore.txt = .gitignore.txt
+		build.ps1 = build.ps1
+		docker-build.ps1 = docker-build.ps1
+		run-docker.ps1 = run-docker.ps1
+		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification.SmsService", "Notification.SmsService\Notification.SmsService.csproj", "{02E22799-54E1-4202-B3A0-A7516204CE33}"
