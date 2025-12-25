@@ -8,6 +8,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection("RabbitMQ"));
+
 builder.Services.AddSingleton<IRabbitMqService, RabbitMqService>();
 
 builder.Services.AddDbContext<NotificationContext>(options =>
