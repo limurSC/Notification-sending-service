@@ -25,9 +25,13 @@ public class Worker : BackgroundService
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        _logger.LogInformation("Email Service запущен. Ожидание RabbitMQ...");
+
+        await WaitForRabbitMQAsync(stoppingToken);
+
         await InitializeRabbitMQAsync();
 
-        _logger.LogInformation("Email Service запущен. Ожидание сообщений...");
+        _logger.LogInformation("Email Service готов к работе. Ожидание сообщений...");
 
         var consumer = new AsyncEventingBasicConsumer(_channel);
 
@@ -55,13 +59,56 @@ public class Worker : BackgroundService
         }
     }
 
+    private async Task WaitForRabbitMQAsync(CancellationToken cancellationToken)
+    {
+        const int maxRetries = 30;
+        const int delayMs = 2000;
+
+        for (int attempt = 1; attempt <= maxRetries; attempt++)
+        {
+            try
+            {
+                _logger.LogInformation("Попытка подключения к RabbitMQ ({Attempt}/{MaxRetries})...",
+                    attempt, maxRetries);
+
+                var factory = new ConnectionFactory
+                {
+                    HostName = "rabbitmq",
+                    Port = 5672,
+                    UserName = "guest",
+                    Password = "guest",
+                    DispatchConsumersAsync = true,
+                    RequestedConnectionTimeout = TimeSpan.FromSeconds(5)
+                };
+
+                using var connection = factory.CreateConnection();
+                using var channel = connection.CreateModel();
+
+                _logger.LogInformation("RabbitMQ доступен!");
+                return;
+            }
+            catch (Exception ex) when (attempt < maxRetries)
+            {
+                _logger.LogWarning("RabbitMQ еще не готов. Ожидание {Delay}ms... Ошибка: {Message}",
+                    delayMs, ex.Message);
+                await Task.Delay(delayMs, cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Не удалось подключиться к RabbitMQ после {MaxRetries} попыток",
+                    maxRetries);
+                throw;
+            }
+        }
+    }
+
     private async Task InitializeRabbitMQAsync()
     {
         try
         {
             var factory = new ConnectionFactory
             {
-                HostName = "localhost",
+                HostName = "rabbitmq",
                 Port = 5672,
                 UserName = "guest",
                 Password = "guest",
